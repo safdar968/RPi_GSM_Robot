@@ -7,14 +7,9 @@ class App:
         self.initTracking = None
         self.window.title(window_title)
         self.video_source = ''
-        self.tracker_types = [
+        self.input_options = [
             ('CSRT',1),
-            ('MIL', 2),
-            ('KCF', 3),
-            ('TLD', 4),
-            ('MOSSE', 5),
-            ('BOOSTING', 6),
-            ('MEDIANFLOW', 7)]
+            ('MIL', 2)]
 
         self.tracker_val = tkinter.IntVar()
         self.tracker_val.set(0)
@@ -32,7 +27,7 @@ class App:
         self.btn_load_file = tkinter.Button(window, text="Load Video", width=10, command=self.load_file)
         self.btn_track = tkinter.Button(window, text="Track", width=10, command=self.track)
         # Button that lets the user take a select the object to track
-        for val, tracker_type in enumerate(self.tracker_types):
+        for val, tracker_type in enumerate(self.input_options):
 
             # Radio Button that lets the user select tracker type
             radio_tracker_type = tkinter.Radiobutton(window, 
